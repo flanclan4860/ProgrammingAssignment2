@@ -41,14 +41,14 @@ makeCacheMatrix <- function(specialMatrix = matrix()) {
 ## Takes a matrix and returns the inverse of the matrix
 cacheSolve <- function(specialMatrix, ...) {
   
-  inverse <- specialMatrix$getInverse()
-  if(!is.null(inverse)) {
-    message("getting cached data")
-    return(inverse)
-  }
+     inverse <- specialMatrix$getInverse()
+     if(!is.null(inverse)) {
+          message("getting cached data")
+          return(inverse)
+     }
   
-  matrixData <- specialMatrix$get()  ## get the matrix data
-  inverse <- solve(matrixData, ...)  ## calculate inverse
-  specialMatrix$setInverse(inverse)  ## store result
-  inverse
+     matrixData <- specialMatrix$get()  ## get the matrix data
+     inverse <- solve(matrixData, ...)  ## calculate inverse
+     specialMatrix$setInverse(inverse)  ## store result
+     inverse
 }
